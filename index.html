@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menjawab Soal Aljabar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .image-container {
+            text-align: center; /* Memusatkan gambar dan teks */
+            margin-top: 20px; /* Jarak atas untuk gambar */
+        }
+
+        .caption {
+            margin-top: 10px; /* Jarak atas untuk teks di bawah gambar */
+            font-size: 16px; /* Ukuran font untuk teks */
+            color: #555; /* Warna teks */
+            text-align: center; /* Memusatkan teks */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PENYELESAIAN AL JABAR</h1>
+        <label for="a">Masukkan nilai x:</label>
+        <input type="number" id="a" required>
+        
+        <label for="b">Masukkan nilai y:</label>
+        <input type="number" id="b" required>
+        
+        <button onclick="solveEquation()">Selesaikan Persamaan</button>
+        
+        <h2 id="result"></h2>
+    </div>
+
+    <div class="image-container">
+        <img width="250px" height="auto" src="1.png" alt="Ilmuwan Matematikawan" />
+        <div class="caption">
+            Beliau merupakan ilmuwan matematikawan yang berkontribusi besar dalam bidang aljabar.
+        </div>
+    </div>
+
+    <script>
+        function solveEquation() {
+            const a = parseFloat(document.getElementById('a').value);
+            const b = parseFloat(document.getElementById('b').value);
+
+            if (a === 0) {
+                if (b === 0) {
+                    document.getElementById('result').innerText = 'Persamaan memiliki solusi tak terhingga.';
+                } else {
+                    document.getElementById('result').innerText = 'Persamaan tidak memiliki solusi.';
+                }
+            } else {
+                const x = -b / a;
+                document.getElementById('result').innerText = `Nilai x adalah: ${x.toFixed(2)}`;
+            }
+        }
+    </script>
+</body>
+</html>
